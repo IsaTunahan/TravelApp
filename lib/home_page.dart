@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:travel_home_page/listview_content/circle.dart';
 import 'package:travel_home_page/listview_content/square.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -29,36 +27,36 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          appBar: AppBar(
-            title: Text("Home Page"),
-          ),
-          body: Column(
-            children: [
-              SizedBox(
-                height: 150,
-                child: ListView.builder(
-                  itemCount: _stories.length,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return MyCircle(
-                      child: _stories[index],
-                    );
-                  },
-                ),
+        appBar: AppBar(
+          title:const Text("Home Page"),
+        ),
+        body: Column(
+          children: [
+            SizedBox(
+              height: 80,
+              child: ListView.builder(
+                itemCount: _stories.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return MyCircle(
+                    child: _stories[index],
+                  );
+                },
               ),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: _posts.length,
-                  itemBuilder: (context, index) {
-                    return MySquare(
-                      child: _posts[index],
-                    );
-                  },
-                ),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: _posts.length,
+                itemBuilder: (context, index) {
+                  return MySquare(
+                    child: _posts[index],
+                  );
+                },
               ),
-            ],
-          ),
-          ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -7,7 +7,7 @@ class MyCircle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(2.0),
       child: Container(
         width: 100,
         height: 100,
@@ -18,7 +18,7 @@ class MyCircle extends StatelessWidget {
         child: Center(
           child: Text(
             child,
-            style: const TextStyle(fontSize: 20),
+            style: const TextStyle(fontSize: 15),
           ),
         ),
       ),
