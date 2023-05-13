@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
 
 class MyCircle extends StatelessWidget {
-  final String child;
-  const MyCircle({super.key, required this.child});
+  final Map<String, dynamic> data;
+
+  const MyCircle({Key? key, required this.data}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(2.0),
-      child: Container(
-        width: 100,
-        height: 100,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.pink[200],
-        ),
-        child: Center(
-          child: Text(
-            child,
-            style: const TextStyle(fontSize: 15),
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 8),
+      child: Column(
+        children: [
+          CircleAvatar(
+            radius: 30,
+            backgroundImage:
+                AssetImage('lib/images/profile_photos/${data['profile']}'),
           ),
-        ),
+          const SizedBox(height: 4),
+          Text(
+            data['user'],
+            style: const TextStyle(color: Colors.white),
+          ),
+        ],
       ),
     );
   }
