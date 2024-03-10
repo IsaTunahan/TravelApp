@@ -27,8 +27,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var storiesIndex = StoriesModel().stories;
-    var postsIndex = PostsModel().posts;
+    final storiesIndex = StoriesModel().stories;
+    final postsIndex = PostsModel().posts;
     return Scaffold(
       backgroundColor: Colors.black,
       body: FutureBuilder<List<Post>>(
@@ -47,6 +47,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   Expanded(
+                    flex: 1,
                     child: ListView.builder(
                       itemCount: storiesIndex.length,
                       scrollDirection: Axis.horizontal,

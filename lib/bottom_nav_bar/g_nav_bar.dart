@@ -5,11 +5,12 @@ class GNavBar extends StatefulWidget {
   const GNavBar({
     super.key,
     required this.selectedIndex,
-    this.onTabChange,
+    required this.onTabChange,
   });
 
   final int selectedIndex;
-  final Function(int)? onTabChange;
+  final Function(int) onTabChange;
+
   @override
   State<GNavBar> createState() => _GNavBarState();
 }
