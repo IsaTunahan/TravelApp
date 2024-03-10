@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:travel_home_page/home_page.dart';
+import 'package:travel_home_page/screens/main_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      builder:(context, child) {
+      builder: (context, child) {
         return Directionality(textDirection: TextDirection.ltr, child: child!);
       },
       debugShowCheckedModeBanner: false,
@@ -25,19 +25,5 @@ class MyApp extends StatelessWidget {
       ),
       home: const MainPage(),
     );
-  }
-}
-
-class MainPage extends StatefulWidget {
-  const MainPage({super.key});
-
-  @override
-  State<MainPage> createState() => MainPageState();
-}
-
-class MainPageState extends State<MainPage> {
-  @override
-  Widget build(BuildContext context) {
-    return const HomePage();
   }
 }
